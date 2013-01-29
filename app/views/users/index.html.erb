@@ -1,0 +1,12 @@
+<table class='table table-hover checklist'>
+	<tr>
+		<th>Email</th>
+		<th><%= link_to "New User", new_user_path, class: 'btn btn-success' %></th>
+	</th>
+	<% @users.each do |user| %>
+		<tr id="user_<%= user.id %>">
+			<td><%= user.email %></td>
+			<td><%= item_actions(user) %></td>
+		</tr>
+	<% end %>
+</table>

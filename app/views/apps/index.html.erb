@@ -1,0 +1,20 @@
+<table class='table table-hover checklist'>
+	<tr>
+		<th>Name</th>
+		<th>Server IP Address</th>
+		<th>App Path</th>
+		<th>Server Username</th>
+		<th>Server Password</th>
+		<th><%= link_to "New App", new_app_path, class: 'btn btn-success' %></th>
+	</tr>
+	<% @apps.each do |app| %>
+		<tr id="app_<%= app.id %>">
+			<td><%= app.name %></td>
+			<td><%= app.server_ip %></td>
+			<td><%= app.server_password %></td>
+			<td><%= app.server_path %></td>
+			<td><%= app.server_username %></td>
+			<td><%= item_actions(app) %></td>
+		</tr>
+	<% end %>
+</table>

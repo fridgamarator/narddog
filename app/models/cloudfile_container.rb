@@ -5,4 +5,6 @@ class CloudfileContainer < ActiveRecord::Base
 	validates :name, presence: true
 
 	# Associations
+	has_many :apps, dependent: :nullify
+	has_many :backups, dependent: :nullify
 end

@@ -8,4 +8,6 @@ class SftpStorage < ActiveRecord::Base
 	validates :server_username, presence: true
 
 	# Associations
+	has_many :apps, dependent: :nullify
+	has_many :backups, dependent: :nullify
 end

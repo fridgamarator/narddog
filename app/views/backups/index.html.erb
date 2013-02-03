@@ -1,0 +1,25 @@
+<table class='table table-hover checklist'>
+	<tr>
+		<th>App</th>
+		<th>Cloudfile Container</th>
+		<th>Sftp Storage</th>
+		<th>Schedule Time</th>
+		<th>Recurrance</th>
+		<th>Last Performed</th>
+		<th><%= link_to "New Backup", new_backup_path, class: 'btn btn-success' %></th>
+	</tr>
+	<% @backups.each do |backup| %>
+		<tr id="backup_<%= backup.id %>">
+			<td><%= backup.try(:app).try(:name) %></td>
+			<td><%= backup.try(:cloudfile_container).try(:name) %></td>
+			<td><%= backup.try(:sftp_storage).try(:name) %></td>
+			<td><%= backup.schedule_time %></td>
+			<td>TODO: recurrance (ice_cube gem)</td>
+			<td><%= backup.last_performed %></td>
+			<td>
+				<%= item_actions(backup) %>
+				<%= link_to 'Run Backup', run_backup_path(backup), remote: true, class: 'btn btn-success' %>
+			</td>
+		</tr>
+	<% end %>
+</table>

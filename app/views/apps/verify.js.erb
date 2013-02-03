@@ -1,0 +1,7 @@
+<% if @response %>
+	$that = $('tr#app_<%= @app.id %> .verified');
+	$that.removeClass('alert-error').addClass('alert-success').html("SSH Verified");
+<% else %>
+	// TODO: do something with this false return instead of console.log
+	console.log("need to do something about false return");
+<% end %>

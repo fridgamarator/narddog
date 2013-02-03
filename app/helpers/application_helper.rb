@@ -16,4 +16,10 @@ module ApplicationHelper
 		html = link_to 'Delete', that, method: :delete, remote: true, class: 'btn btn-danger', confirm: "Are you sure?"
 		html += link_to 'Edit', polymorphic_path(that, action: :edit), class: 'btn btn-primary'
 	end
+
+	# current / safe rails version
+	def current_version
+		require "#{Rails.root}/lib/get_current_version.rb"
+		GetCurrentVersion.current_rails_version
+	end
 end

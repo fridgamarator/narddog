@@ -75,6 +75,9 @@ GEM
       metaclass (~> 0.0.1)
     multi_json (1.5.0)
     mysql2 (0.3.11)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh (2.6.3)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.4.4)
@@ -149,6 +152,8 @@ DEPENDENCIES
   factory_girl_rails
   jquery-rails
   mysql2
+  net-sftp
+  net-ssh
   rails (= 3.2.11)
   rspec-rails
   sass-rails (~> 3.2.3)

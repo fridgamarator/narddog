@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130129042408) do
+ActiveRecord::Schema.define(:version => 20130202233333) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -19,9 +19,32 @@ ActiveRecord::Schema.define(:version => 20130129042408) do
     t.string   "server_path"
     t.string   "server_username"
     t.string   "server_password"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.boolean  "ssh_verified"
+    t.string   "rails_version"
+    t.boolean  "needs_updated"
+    t.integer  "cloudfile_container_id"
+    t.integer  "sftp_storage_id"
+    t.string   "db_type"
+    t.string   "db_name"
+    t.string   "db_username"
+    t.string   "db_password"
   end
+
+  create_table "backups", :force => true do |t|
+    t.integer  "app_id"
+    t.integer  "cloudfile_container_id"
+    t.integer  "sftp_storage_id"
+    t.datetime "schedule_time"
+    t.datetime "last_performed"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  add_index "backups", ["app_id"], :name => "index_backups_on_app_id"
+  add_index "backups", ["cloudfile_container_id"], :name => "index_backups_on_cloudfile_container_id"
+  add_index "backups", ["sftp_storage_id"], :name => "index_backups_on_sftp_storage_id"
 
   create_table "cloudfile_containers", :force => true do |t|
     t.string   "name"

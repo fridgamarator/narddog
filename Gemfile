@@ -11,6 +11,9 @@ gem 'devise'
 
 gem 'cloudfiles'
 
+gem 'net-ssh'
+gem 'net-sftp'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

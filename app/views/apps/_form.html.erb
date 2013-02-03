@@ -1,18 +1,42 @@
 <%= form_for @app do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %><br />
+	<div class="row">
+		<div class="span4">
+			<%= f.label :name %>
+			<%= f.text_field :name %><br />
 
-	<%= f.label :server_ip %>
-	<%= f.text_field :server_ip %><br />
+			<%= f.label :server_ip %>
+			<%= f.text_field :server_ip %><br />
 
-	<%= f.label :server_password %>
-	<%= f.text_field :server_path %><br />
+			<%= f.label :server_password %>
+			<%= f.text_field :server_path %><br />
 
-	<%= f.label :server_path %>
-	<%= f.text_field :server_path %><br />
+			<%= f.label :server_path %>
+			<%= f.text_field :server_path %><br />
 
-	<%= f.label :server_username %>
-	<%= f.text_field :server_username %><br />
+			<%= f.label :server_username %>
+			<%= f.text_field :server_username %><br />
+		</div>
+		<div class="span4">
+			<%= f.label :db_type, "Database Type" %>
+			<%= f.select :db_type, ['mysql', 'postgresql'] %><br />
+
+			<%= f.label :db_name, "Database Name" %>
+			<%= f.text_field :db_name %><br />
+
+			<%= f.label :db_username, "Database Username" %>
+			<%= f.text_field :db_username %><br />
+
+			<%= f.label :db_password, "Database Password" %>
+			<%= f.text_field :db_password %>
+		</div>
+		<div class="span4">
+			<p>backup cloudfile container</p>
+			<%= f.select :cloudfile_container_id, CloudfileContainer.all.collect{|cf| [cf.name, cf.id]}, {:include_blank => true} %>
+
+			<p>backup sftp storage</p>
+			<%= f.select :sftp_storage_id, SftpStorage.all.collect{|ss| [ss.name, ss.id]}, {:include_blank => true} %>
+		</div>	
+	</div>
 
 	<%= f.submit %>
 <% end %>

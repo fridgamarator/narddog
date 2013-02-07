@@ -35,6 +35,7 @@ GEM
     bourne (1.1.2)
       mocha (= 0.10.5)
     builder (3.0.4)
+    chronic (0.9.0)
     cloudfiles (1.5.0.1)
       json
     coffee-rails (3.2.2)
@@ -60,6 +61,7 @@ GEM
       railties (>= 3.0.0)
     hike (1.2.1)
     i18n (0.6.1)
+    ice_cube (0.9.3)
     journey (1.0.4)
     jquery-rails (2.2.0)
       railties (>= 3.0, < 5.0)
@@ -140,6 +142,9 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    whenever (0.8.2)
+      activesupport (>= 2.3.4)
+      chronic (>= 0.6.3)
 
 PLATFORMS
   ruby
@@ -150,6 +155,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   factory_girl_rails
+  ice_cube
   jquery-rails
   mysql2
   net-sftp
@@ -159,3 +165,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   shoulda-matchers
   uglifier (>= 1.0.3)
+  whenever

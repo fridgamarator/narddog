@@ -47,6 +47,8 @@ class BackupsController < ApplicationController
 
         RunBackups.run_backup(@backup)
 
+        @backup.update_attributes(last_performed: Time.now)
+
         render nothing: true
     end
 

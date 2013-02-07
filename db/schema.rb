@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130202233333) do
+ActiveRecord::Schema.define(:version => 20130207052741) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20130202233333) do
     t.integer  "app_id"
     t.integer  "cloudfile_container_id"
     t.integer  "sftp_storage_id"
-    t.datetime "schedule_time"
+    t.text     "schedule_time"
     t.datetime "last_performed"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false

@@ -8,9 +8,12 @@ gem 'mysql2'
 # User auth
 gem 'devise'
 
+# Schedules
+gem 'whenever', require: false
+
+gem 'ice_cube'
 
 gem 'cloudfiles'
-
 gem 'net-ssh'
 gem 'net-sftp'
 

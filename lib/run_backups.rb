@@ -20,8 +20,8 @@ module RunBackups
 				ssh.exec!("source ~/.bash_profile; cd #{backup.app.server_path}; backup perform -t temp_backup -c backup_config.rb")
 			end
 
-			# sftp.remove("#{backup.app.server_path}/backup_tmp.rb")
-			# sftp.remove("#{backup.app.server_path}/backup_config.rb")
+			sftp.remove("#{backup.app.server_path}/backup_tmp.rb")
+			sftp.remove("#{backup.app.server_path}/backup_config.rb")
 
 		end
 	end

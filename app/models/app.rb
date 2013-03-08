@@ -30,7 +30,6 @@ class App < ActiveRecord::Base
 				needs_key = true
 			rescue
 				ssh = false
-				logger.debug 'yoyoyo'
 			end
 		end
 

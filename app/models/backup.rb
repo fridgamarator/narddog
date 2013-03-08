@@ -11,15 +11,15 @@ class Backup < ActiveRecord::Base
 	belongs_to :cloudfile_container
 	belongs_to :sftp_storage
 
-	def schedule_time=(value)
-		write_attribute(:schedule_time, value.to_yaml)
-	end
+	# def schedule_time=(value)
+	# 	write_attribute(:schedule_time, value.to_yaml)
+	# end
 
-	def schedule_time
-		if read_attribute(:schedule_time)
-			Schedule.from_yaml(read_attribute(:schedule_time))
-		else
-			nil
-		end
-	end
+	# def schedule_time
+	# 	if read_attribute(:schedule_time)
+	# 		Schedule.from_yaml(read_attribute(:schedule_time))
+	# 	else
+	# 		nil
+	# 	end
+	# end
 end

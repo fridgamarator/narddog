@@ -17,7 +17,7 @@ module RunBackups
 			sftp.file.open("#{backup.app.server_path}/backup_config.rb", "w"){|f| f.puts backup_template }
 
 			Net::SSH.start(backup.app.server_ip, backup.app.server_username) do |ssh|
-				ssh.exec!("source ~/.bash_profile; cd #{backup.app.server_path}; backup perform -t temp_backup -c backup_config.rb")
+				output = ssh.exec!("source ~/.bash_profile; cd #{backup.app.server_path}; backup perform -t temp_backup -c backup_config.rb")
 			end
 
 			sftp.remove("#{backup.app.server_path}/backup_tmp.rb")
@@ -53,15 +53,13 @@ module RunBackups
 		if backup.app.db_type == "mysql"
 			template += "database MySQL do |db|\n"
 			template += "db.additional_options = [\"--quick\", \"--single-transaction\"]\n"
-		elsif backup.app.db_type == "postresql"
+		elsif backup.app.db_type == "postgresql"
 			template += "database PostgreSQL do |db|\n"
 			template += "db.additional_options = [\"-xc\", \"-E=utf8\"]\n"
 		end
 		template += "db.name = \"#{backup.app.db_name}\"\n"
 		template += "db.username = \"#{backup.app.db_username}\"\n"
 		template += "db.password = \"#{backup.app.db_password}\"\n"
-		template += "db.host = \"localhost\"\n"
-		template += "db.port = 5432\n"
 		template += "end\n"
 		if backup.sftp_storage
 			template += "store_with SFTP do |server|\n"

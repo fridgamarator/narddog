@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 
 # database
-gem 'mysql2'
+gem 'pg'
 
 # User auth
 gem 'devise'

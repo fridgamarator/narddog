@@ -3,5 +3,7 @@
 FactoryGirl.define do
   factory :cloudfile_container do
     name "app_bucket"
+    api_key 'sdflkjsdlfkjslkj234l2k3jlkfsfd'
+    username 'some_username'
   end
 end

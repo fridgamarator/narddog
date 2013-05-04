@@ -41,8 +41,8 @@ module RunBackups
 		template += "split_into_chunks_of 250\n"
 		if backup.cloudfile_container
 			template += "store_with CloudFiles do |cf|\n"
-			template += "cf.api_key    = \"763fe3e8d52f7fc7512a0a3c955b415c\"\n"
-			template += "cf.username   = \"roundscapes\"\n"
+			template += "cf.api_key    = \"#{backup.cloudfile_container.api_key}\"\n"
+			template += "cf.username   = \"#{backup.cloudfile_container.username}\"\n"
 			template += "cf.container  = \"#{backup.cloudfile_container.name}\"\n"
 			template += "cf.path = \"/#{backup.cloudfile_container.name}\"\n"
 			template += "cf.keep = 5\n"

@@ -9,7 +9,7 @@ FactoryGirl.define do
     server_password "8008s"
     ssh_verified false
     rails_version '3.2.11'
-    db_type 'msyql'
+    db_type 'mysql'
     db_name 'app_production'
     db_username 'username'
     db_password 'asdfqwer12'

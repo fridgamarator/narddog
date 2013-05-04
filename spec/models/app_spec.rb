@@ -8,7 +8,7 @@ describe App do
 	it { should validate_presence_of(:server_ip) }
 	it { should validate_presence_of(:server_path) }
 	it { should validate_presence_of(:server_username) }
-	it { should ensure_inclusion_of(:db_type).in_array(['msyql', 'postgresql']) }
+	it { should ensure_inclusion_of(:db_type).in_array(['mysql', 'postgresql']) }
 
 	# Associations
 	it { should belong_to :cloudfile_container }

@@ -1,11 +1,15 @@
 <table class='table table-hover checklist'>
 	<tr>
 		<th>Name</th>
+		<td></td>
+		<td></td>
 		<th><%= link_to "New Cloudfile Container", new_cloudfile_container_path, class: 'btn btn-success' %></th>
 	</tr>
 	<% @cloudfile_containers.each do |container| %>
 		<tr id="cloudfile_container_<%= container.id %>">
 			<td><%= container.name %></td>
+			<td><%= container.api_key %></td>
+			<td><%= container.username %></td>
 			<td><%= item_actions(container) %></td>
 		</tr>
 	<% end %>

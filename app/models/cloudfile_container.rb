@@ -1,5 +1,5 @@
 class CloudfileContainer < ActiveRecord::Base
-	attr_accessible :name
+	attr_accessible :name, :api_key, :username
 
 	# Validations
 	validates :name, presence: true

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.13'
 
 # database
 gem 'pg'
@@ -12,6 +12,7 @@ gem 'devise'
 gem 'whenever', require: false
 
 gem 'ice_cube'
+gem 'recurring_select'
 
 gem 'cloudfiles'
 gem 'net-ssh'

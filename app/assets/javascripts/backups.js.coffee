@@ -2,7 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $ ->
-	$('#backup_date').datepicker({
-		format: 'dd/mm/yyyy'
-	})
-	$('#backup_time').timepicker()
+	# $('#backup_date').datepicker({
+	# 	format: 'dd/mm/yyyy'
+	# })
+	$('#backup_schedule_time').timepicker
+		minuteStep: 30

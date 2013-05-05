@@ -12,7 +12,6 @@ gem 'devise'
 gem 'whenever', require: false
 
 gem 'ice_cube'
-gem 'recurring_select'
 
 gem 'cloudfiles'
 gem 'net-ssh'
@@ -38,6 +37,10 @@ end
 
 group :test do
 	gem 'shoulda-matchers'
+end
+
+group :development do
+	gem 'pry'
 end
 
 gem 'jquery-rails'

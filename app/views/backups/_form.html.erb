@@ -9,7 +9,7 @@
 	<%= f.select :sftp_storage_id, SftpStorage.all.collect{|ss| [ss.name, ss.id]}, {include_blank: true} %><br />
 
 	<%= f.label 'how often?' %>
-	<%= f.select_recurring :schedule_rule, [IceCube::Rule.daily] + 0.upto(6).map{|i| IceCube::Rule.weekly.day(i)}  %>
+	<%= f.select :schedule_rule, schedule_rule_select %>
 
 	<%= f.label :schedule_time %>
 	<div class="input-append bootstrap-timepicker">

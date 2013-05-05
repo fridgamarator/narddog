@@ -3,8 +3,8 @@
 		<th>App</th>
 		<th>Cloudfile Container</th>
 		<th>Sftp Storage</th>
-		<th>Schedule Time</th>
 		<th>Recurrance</th>
+		<th>Schedule Time</th>
 		<th>Last Performed</th>
 		<th><%= link_to "New Backup", new_backup_path, class: 'btn btn-success' %></th>
 	</tr>
@@ -13,8 +13,8 @@
 			<td><%= backup.try(:app).try(:name) %></td>
 			<td><%= backup.try(:cloudfile_container).try(:name) %></td>
 			<td><%= backup.try(:sftp_storage).try(:name) %></td>
-			<td><%= backup.schedule_time.strftime("%I:%M %p") %></td>
 			<td><%= backup.schedule_rule %></td>
+			<td><%= backup.schedule_time.strftime("%I:%M %p") %></td>
 			<td><%= backup.last_performed %></td>
 			<td>
 				<%= item_actions(backup) %>

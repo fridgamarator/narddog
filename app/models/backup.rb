@@ -14,7 +14,7 @@ class Backup < ActiveRecord::Base
 
 	def schedule_rule
 		if read_attribute(:schedule_rule)
-			read_attribute(:schedule_rule)
+			JSON.parse(read_attribute(:schedule_rule).gsub("=>", ':'))
 		else
 			nil
 		end

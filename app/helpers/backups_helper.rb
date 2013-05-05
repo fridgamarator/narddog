@@ -6,7 +6,7 @@ module BackupsHelper
 			t = IceCube::Rule.weekly.day(i).to_hash
 			t[:validations].try(:stringify_keys!)
 			t.stringify_keys!
-			stuff << [IceCube::Rule.weekly.day(i), t]
+			stuff << [IceCube::Rule.weekly.day(i), t.to_s]
 		end
 		stuff
 	end

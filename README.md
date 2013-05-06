@@ -15,7 +15,7 @@
 
 #### TODO
 * Varioius To-Do's throughout project `rake notes:todo`
-* Recurring backups
+* Recurring backups (ice_cube gem)
 * sftp backups
 * other backup's (a3, dropbox, etc)
 * file system backups

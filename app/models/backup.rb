@@ -1,6 +1,6 @@
 class Backup < ActiveRecord::Base
 	include IceCube
-	# serialize :schedule_rule, Hash
+	serialize :schedule_rule
 
 	attr_accessible :last_performed, :schedule_rule, :schedule_time, :app_id, :cloudfile_container_id, :sftp_storage_id
 
@@ -14,7 +14,7 @@ class Backup < ActiveRecord::Base
 
 	def schedule_rule
 		if read_attribute(:schedule_rule)
-			JSON.parse(read_attribute(:schedule_rule).gsub("=>", ':'))
+			Schedule.from_yaml(read_attribute(:schedule_rule))
 		else
 			nil
 		end

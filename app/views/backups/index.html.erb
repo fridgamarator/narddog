@@ -14,7 +14,7 @@
 			<td><%= backup.try(:cloudfile_container).try(:name) %></td>
 			<td><%= backup.try(:sftp_storage).try(:name) %></td>
 			<td><%= backup.schedule_rule %></td>
-			<td><%= backup.schedule_time.strftime("%I:%M %p") %></td>
+			<td><%= backup.schedule_time %></td>
 			<td><%= backup.last_performed %></td>
 			<td>
 				<%= item_actions(backup) %>

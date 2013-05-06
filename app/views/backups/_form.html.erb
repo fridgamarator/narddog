@@ -3,12 +3,13 @@
 	<%= f.select :app_id, App.all.collect{|a| [a.name, a.id]} %><br />
 
 	<%= f.label :cloudfile_container %>
-	<%= f.select :cloudfile_container_id, CloudfileContainer.all.collect{|cf| [cf.name, cf.id]}, {include_blank: true} %><br />
+	<%= f.select :cloudfile_container_id, CloudfileContainer.all.collect{|cf| [cf.name, cf.id]}, include_blank: true %><br />
 
 	<%= f.label :sftp_storage %>
-	<%= f.select :sftp_storage_id, SftpStorage.all.collect{|ss| [ss.name, ss.id]}, {include_blank: true} %><br />
+	<%= f.select :sftp_storage_id, SftpStorage.all.collect{|ss| [ss.name, ss.id]}, include_blank: true %><br />
 
 	<%= f.label 'how often?' %>
+	<% # TODO: schedule_rule now showing correct 'selected' %>
 	<%= f.select :schedule_rule, schedule_rule_select %>
 
 	<%= f.label :schedule_time %>

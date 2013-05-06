@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505020921) do
+ActiveRecord::Schema.define(:version => 20130506030432) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20130505020921) do
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
     t.text     "schedule_rule"
-    t.time     "schedule_time"
+    t.string   "schedule_time"
   end
 
   add_index "backups", ["app_id"], :name => "index_backups_on_app_id"

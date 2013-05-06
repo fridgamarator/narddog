@@ -17,6 +17,10 @@ gem 'cloudfiles'
 gem 'net-ssh'
 gem 'net-sftp'
 
+gem 'capistrano'
+gem 'capistrano-ext'
+gem 'rvm-capistrano'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

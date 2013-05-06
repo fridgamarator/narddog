@@ -8,7 +8,7 @@
 #### How-to
 
 * install backup gem on remote server
-* create an app
+* create an app (remote server must either have local server ssh key, or accept ssh with password)
 * create a cloudfile container
 * create a backup
 * click 'run backup'

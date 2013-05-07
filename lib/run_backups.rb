@@ -45,7 +45,7 @@ module RunBackups
 			template += "cf.username   = \"#{backup.cloudfile_container.username}\"\n"
 			template += "cf.container  = \"#{backup.cloudfile_container.name}\"\n"
 			template += "cf.path = \"/#{backup.cloudfile_container.name}\"\n"
-			template += "cf.keep = 5\n"
+			# template += "cf.keep = 5\n"
 			template += "cf.auth_url = \"auth.api.rackspacecloud.com\"\n"
 			template += "cf.servicenet = false\n"
 			template += "end\n"
